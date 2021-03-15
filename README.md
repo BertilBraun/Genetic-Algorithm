@@ -1,6 +1,3 @@
----
-permalink: /index.html
----
 
 # Genetic Algorithm
 
@@ -30,3 +27,7 @@ The next generation starts all over.
 
 - the simulation gets stopped as soon as, as many steps were moved as the last best has taken in the last generation
 - the best performing piece of each round gets propergated every time to avoid loosing the so far optimal candidate
+
+---
+permalink: /index.html
+---
