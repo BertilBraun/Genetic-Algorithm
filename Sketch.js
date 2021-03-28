@@ -12,20 +12,18 @@ let slider
 function setup() {
     createCanvas(800, 800);
 
-    createP('Population Count:')
-    slider = createSlider(10, 1000, 500, 10)
-    tooltip = createP('Use the Left Mouse Button to draw in Obstacles!')
+    slider = document.getElementById('slider')
+    tooltip = document.getElementById('tooltip')
+    checkbox = document.getElementById('checkbox')
 
-    checkbox = createCheckbox('Toggle Options')
-    checkbox.changed(() => {
-        if (checkbox.checked())
-            tooltip.elt.innerHTML = '<p>Use the Left Mouse Button to move the Goal!</p>'
-        else
-            tooltip.elt.innerHTML = '<p>Use the Left Mouse Button to draw in Obstacles!</p>'
-    });
-
-    createButton('reset').mousePressed(reset);
     reset()
+}
+
+function checkboxClick() {
+    if (checkbox.checked)
+        tooltip.innerHTML = 'Use the Left Mouse Button to move the Goal!'
+    else
+        tooltip.innerHTML = 'Use the Left Mouse Button to draw in Obstacles!'
 }
 
 function reset() {
@@ -37,7 +35,7 @@ function reset() {
 function mouseClicked() {
     if (mouseX > width || mouseY > height || mouseX < 0 || mouseY < 0) return;
 
-    if (checkbox.checked()) {
+    if (checkbox.checked) {
         goal = createVector(mouseX, mouseY)
         population.reset()
     }
@@ -71,8 +69,8 @@ function drawGoal() {
 }
 
 function draw() {
-    if (populationCount != slider.value()) {
-        populationCount = slider.value()
+    if (populationCount != slider.value) {
+        populationCount = slider.value
         population = new Population(populationCount);
     }
 
