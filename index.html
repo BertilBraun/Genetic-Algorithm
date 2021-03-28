@@ -10,17 +10,33 @@
 </head>
 
 <body>
+
+    <div id="controls">
+        <div id="top">
+            <h1>Generic Algorithm</h1>
+            <h4>By Bertil Braun</h4>
+            <h3>Population Count:</h3>
+            <input type="range" min="10" max="1000" value="500" class="slider" id="slider">
+        </div>
+        <div id="bottom">
+            <div id="tooltip">Draw in obstacles with your mouse!</div>
+            <div id="settings">
+                <button onclick="reset()">RESET</button>
+                <div id="toggle">
+                    <div>Toggle Options</div>
+                    <div class="switch">
+                        <input type="checkbox" id="checkbox" onclick="checkboxClick()">
+                        <span class="slider round"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="Brain.js"></script>
     <script src="Piece.js"></script>
     <script src="Population.js"></script>
     <script src="Sketch.js"></script>
 
-    <p>Population Count:</p>
-    <input type="range" min="10" max="1000" value="500" class="slider" id="slider">
-
-    <p id="tooltip">Use the Left Mouse Button to draw in Obstacles!</p>
-    <p>Toggle Options</p><input type="checkbox" id="checkbox" onclick="checkboxClick()">
-    <button onclick="reset()">RESET</button>
 </body>
 
 </html>

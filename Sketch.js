@@ -1,4 +1,3 @@
-
 var goal;
 var population;
 var populationCount = 500;
@@ -10,20 +9,18 @@ let tooltip
 let slider
 
 function setup() {
-    createCanvas(800, 800);
-
+    createCanvas(600, 600);
     slider = document.getElementById('slider')
     tooltip = document.getElementById('tooltip')
     checkbox = document.getElementById('checkbox')
-
     reset()
 }
 
 function checkboxClick() {
     if (checkbox.checked)
-        tooltip.innerHTML = 'Use the Left Mouse Button to move the Goal!'
+        tooltip.innerHTML = 'Move the Goal with your mouse!'
     else
-        tooltip.innerHTML = 'Use the Left Mouse Button to draw in Obstacles!'
+        tooltip.innerHTML = 'Draw in obstacles with your mouse!'
 }
 
 function reset() {
@@ -38,8 +35,7 @@ function mouseClicked() {
     if (checkbox.checked) {
         goal = createVector(mouseX, mouseY)
         population.reset()
-    }
-    else {
+    } else {
         if (pointOne == null)
             pointOne = createVector(mouseX, mouseY)
         else {
