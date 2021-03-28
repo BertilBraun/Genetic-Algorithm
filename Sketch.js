@@ -69,8 +69,8 @@ function drawGoal() {
 }
 
 function draw() {
-    if (populationCount != slider.value) {
-        populationCount = slider.value
+    if (populationCount !== Number(slider.value)) {
+        populationCount = Number(slider.value)
         population = new Population(populationCount);
     }
 
